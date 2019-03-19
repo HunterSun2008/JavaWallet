@@ -9,23 +9,37 @@ public class Transaction {
 
     private long handle;
 
-    /**
-     *
-     */
     public static class Input {
-        String prev_txid;
-        int index;
-        int sequence;
-        Script script_redeem;
-        Script script_witness;
+        private String txid;
+        private int index;
+        private int sequence;
+        private Script redeem;
+        private Script witness;
+
+        public Input(String _txid, int _index, int _sequence, Script _redeem, Script _witness)
+        {
+            txid = _txid;
+            index = _index;
+            sequence = _sequence;
+            redeem = _redeem;
+            redeem = _witness;
+        }
     }
 
-    /**
-     *
-     */
     public static class Output {
-        long satoshi;
-        Script script_pubkey;
+        private long satoshi;
+        private Script script_pubkey;
+
+        /**
+         *
+         * @param _satoshi  : spend coin with unit satoshi
+         * @param _script_pubkey : locking script
+         */
+        public Output(long _satoshi, Script _script_pubkey)
+        {
+            satoshi = _satoshi;
+            script_pubkey = _script_pubkey;
+        }
     }
 
     /**

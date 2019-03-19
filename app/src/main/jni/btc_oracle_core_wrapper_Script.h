@@ -63,6 +63,14 @@ JNIEXPORT jint JNICALL Java_btc_1oracle_1core_1wrapper_Script_lockTime
 JNIEXPORT jobject JNICALL Java_btc_1oracle_1core_1wrapper_Script_createSegwitDemandDeposit
   (JNIEnv *, jclass, jint, jint, jobject, jint, jint);
 
+/*
+ * Class:     btc_oracle_core_wrapper_Script
+ * Method:    create_P2WPKH
+ * Signature: (Ljava/lang/String;Lbtc_oracle_core_wrapper/Script/network_type;)Lbtc_oracle_core_wrapper/Script;
+ */
+JNIEXPORT jobject JNICALL Java_btc_1oracle_1core_1wrapper_Script_create_1P2WPKH
+  (JNIEnv *, jclass, jstring, jobject);
+
 #ifdef __cplusplus
 }
 #endif

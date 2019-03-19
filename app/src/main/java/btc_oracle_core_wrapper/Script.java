@@ -32,4 +32,12 @@ public class Script {
      */
     public native static Script createSegwitDemandDeposit(int csvBlocks, int walletUnlockingCount, ArrayList<String> walletPubkeys,
                                                                            int serverUnlockingCount, int serverLockingCount);
+
+    /**
+     * Create a P2WPKW script pubkey for locking
+     * @param address   segwit address
+     * @param type      network type
+     * @return
+     */
+    public native static Script create_P2WPKH(String address, network_type type);
 }

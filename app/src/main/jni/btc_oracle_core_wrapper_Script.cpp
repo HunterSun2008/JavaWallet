@@ -163,7 +163,7 @@ JNIEXPORT jobject JNICALL Java_btc_1oracle_1core_1wrapper_Script_createSegwitDem
     int count = min(serverLockingCount, (int) size(oracle::g_server_pubkeys));
     vector<key::pubkey> server_pubkeys(oracle::g_server_pubkeys, oracle::g_server_pubkeys + count);
 
-    vector<string> hex_pubkeys = convertArray<string>(env, walletPubkeys);
+    vector<string> hex_pubkeys = utils::convertArray<string>(env, walletPubkeys);
 
     //
     //  create demand deposit script
@@ -177,5 +177,19 @@ JNIEXPORT jobject JNICALL Java_btc_1oracle_1core_1wrapper_Script_createSegwitDem
                                                                  oracle::g_server_pubkeys[1],
                                                                  oracle::g_server_pubkeys[2]});
     return NewScriptObject(env, demand_deposit);
+}
+
+/*
+ * Class:     btc_oracle_core_wrapper_Script
+ * Method:    create_P2WPKH
+ * Signature: (Ljava/lang/String;Lbtc_oracle_core_wrapper/Script/network_type;)Lbtc_oracle_core_wrapper/Script;
+ */
+JNIEXPORT jobject JNICALL Java_btc_1oracle_1core_1wrapper_Script_create_1P2WPKH
+        (JNIEnv * env, jclass, jstring address, jobject network_type)
+{
+    string addr = utils::jstringToString(env, address);
+    auto script_pubkey = oracle::script::create_p2wpkh(addr, oracle::network_type::testnet);
+
+    return NewScriptObject(env, script_pubkey);
 }
 }

@@ -3,6 +3,7 @@
 //
 #include <jni.h>
 #include <btc_oracle_core/btc_oracle_core.hpp>
+#include "btc_oracle_core_wrapper_Transaction.h"
 
 #define package_name "btc_oracle_core_wrapper"
 

@@ -15,6 +15,14 @@ extern "C" {
 JNIEXPORT jobject JNICALL Java_btc_1oracle_1core_1wrapper_Transaction_create
   (JNIEnv *, jclass, jint, jint, jobject, jobject);
 
+/*
+ * Class:     btc_oracle_core_wrapper_Transaction
+ * Method:    cleanup
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_btc_1oracle_1core_1wrapper_Transaction_cleanup
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

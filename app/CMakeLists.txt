@@ -12,7 +12,7 @@ add_library( # Sets the name of the library.
         SHARED
 
         # Provides a relative path to your source file(s).
-
+        src/main/jni/btc_oracle_core_wrapper_Transaction.cpp
         src/main/jni/btc_oracle_core_wrapper_Script.cpp
         src/main/jni/jni_utils.cpp)
 

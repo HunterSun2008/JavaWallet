@@ -134,9 +134,11 @@ public class MainActivity extends AppCompatActivity
         ArrayList<Transaction.Input> inputs = new ArrayList<Transaction.Input>();
         ArrayList<Transaction.Output> outputs = new ArrayList<Transaction.Output>();
         String txid = new String("");
+        Script p2wpkh = Script.create_P2WPKH("", Script.network_type.testnet);
 
-        //inputs.add(new Transaction.Input({txid, 0, 0, scriptDemandDeposit, null }));
-        //outputs.add(new Transaction.Output());
+
+        inputs.add(new Transaction.Input(txid, 0, 0, scriptDemandDeposit, null));
+        outputs.add(new Transaction.Output(1000000, p2wpkh));
 
         Transaction tx = Transaction.create(2, 0, inputs, outputs);
 
